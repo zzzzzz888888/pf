@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<title>廣告設計 — Nimbus</title>
+<meta name="description" content="廣告設計作品集。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=41">
+</head>
+<body class="page-theme">
+
+<div class="waiter" id="waiter"><div class="pct" id="pct">00</div></div>
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-menu">
+    <ul class="pill-glass">
+      <li><a href="index.html" data-hover>關於</a></li>
+      <li><a href="uiux.html" data-hover>UIUX 設計</a></li>
+      <li class="has-dropdown"><a data-hover>視覺設計<i class="caret"></i></a></li>
+      <li><a href="motion.html" data-hover>動態圖像</a></li>
+    </ul>
+    <div class="dropdown">
+      <div class="dropdown-pill pill-glass">
+        <a href="vi.html" data-hover>VI 設計</a>
+        <a href="illustration.html" data-hover>設計插畫</a>
+        <a href="ad.html" data-hover>廣告設計</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEAD -->
+<header class="page-head">
+  <span class="eyebrow">Advertising</span>
+  <h1>廣告設計</h1>
+  <p>商業廣告與行銷視覺。每個專案可能包含多組畫面，點開後可用下方縮圖切換瀏覽。</p>
+</header>
+
+<!-- GALLERY (masonry) — each card = a project (may have multiple images) -->
+<section class="gallery ad-gallery" id="adGallery">
+
+  <div class="shot" data-hover
+       data-title="夏季飲品上市"
+       data-year="2025" data-client="某飲料品牌"
+       data-desc="夏季新品上市的整合行銷視覺，包含主視覺、社群貼文與店頭物料，統一以清涼的色調貫穿。"
+       data-images="./images/hero-3.jpg,./images/hero-1.jpg,./images/hero-2.jpg">
+    <img src="./images/hero-3.jpg" alt="夏季飲品上市">
+  </div>
+
+  <div class="shot" data-hover
+       data-title="新年品牌賀圖"
+       data-year="2026" data-client="某零售集團"
+       data-desc="農曆新年的品牌賀圖系列，延伸出多款尺寸與版位的廣告素材。"
+       data-images="./images/hero-1.jpg,./images/hero-2.jpg">
+    <img src="./images/hero-1.jpg" alt="新年品牌賀圖">
+  </div>
+
+  <div class="shot" data-hover
+       data-title="星空音樂節主視覺"
+       data-year="2025" data-client="某音樂活動"
+       data-desc="音樂節的主視覺與周邊應用，以星空為核心意象展開一系列宣傳物。"
+       data-images="./images/hero-2.jpg,./images/hero-3.jpg,./images/hero-1.jpg">
+    <img src="./images/hero-2.jpg" alt="星空音樂節主視覺">
+  </div>
+
+  <div class="shot" data-hover
+       data-title="單張形象廣告"
+       data-year="2024" data-client="某品牌"
+       data-desc="單一主視覺的形象廣告（此專案只有一張圖，所以不會出現縮圖列）。"
+       data-images="./images/hero-3.jpg">
+    <img src="./images/hero-3.jpg" alt="單張形象廣告">
+  </div>
+
+  <div class="shot" data-hover
+       data-title="節慶促銷系列"
+       data-year="2024" data-client="某電商"
+       data-desc="節慶檔期的促銷視覺，橫跨多個社群與廣告版位的系列素材。"
+       data-images="./images/hero-1.jpg,./images/hero-3.jpg,./images/hero-2.jpg">
+    <img src="./images/hero-1.jpg" alt="節慶促銷系列">
+  </div>
+
+  <div class="shot" data-hover
+       data-title="品牌形象更新"
+       data-year="2023" data-client="某新創"
+       data-desc="品牌形象更新後的廣告應用，包含數位與實體兩種版位。"
+       data-images="./images/hero-2.jpg,./images/hero-1.jpg">
+    <img src="./images/hero-2.jpg" alt="品牌形象更新">
+  </div>
+
+</section>
+
+<!-- LIGHTBOX (multi-image) -->
+<div class="lightbox lightbox-ad" id="lightboxAd">
+  <button class="lb-close" data-hover>✕</button>
+  <button class="lb-nav lb-prev" data-hover>‹</button>
+  <div class="lb-stage">
+    <div class="lb-main">
+      <div class="lb-imgwrap"><img class="lb-img" alt=""></div>
+      <div class="lb-thumbs"></div>
+    </div>
+    <aside class="lb-info">
+      <span class="eyebrow lb-cat"></span>
+      <h3 class="lb-title"></h3>
+      <div class="lb-meta"></div>
+      <p class="lb-desc"></p>
+    </aside>
+  </div>
+  <button class="lb-nav lb-next" data-hover>›</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="col">
+    <small>Get in touch</small>
+    <a href="#" data-hover>hello@nimbus.studio</a>
+  </div>
+  <div class="col">
+    <small>Explore</small>
+    <a href="uiux.html" data-hover>UIUX 產品設計</a>
+    <a href="illustration.html" data-hover>設計插畫</a>
+    <a href="ad.html" data-hover>廣告設計</a>
+  </div>
+  <div class="col">
+    <small>Follow</small>
+    <a href="#" data-hover>Instagram</a>
+    <a href="#" data-hover>Behance</a>
+  </div>
+  <div class="copy">
+    <span>© Nimbus Studio — Demo</span>
+    <span>Advertising</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js?v=41"></script>
+</body>
+</html>

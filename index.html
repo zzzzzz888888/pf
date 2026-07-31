@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<title>Nimbus — Portfolio</title>
+<meta name="description" content="Portfolio demo — Nimbus studio.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=41">
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="waiter" id="waiter"><div class="pct" id="pct">00</div></div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-menu">
+    <ul class="pill-glass">
+      <li><a href="index.html" data-hover>關於</a></li>
+      <li><a href="uiux.html" data-hover>UIUX設計</a></li>
+      <li class="has-dropdown"><a data-hover>視覺設計<i class="caret"></i></a></li>
+      <li><a href="motion.html" data-hover>動態圖像</a></li>
+    </ul>
+    <div class="dropdown">
+      <div class="dropdown-pill pill-glass">
+        <a href="vi.html" data-hover>VI 設計</a>
+        <a href="illustration.html" data-hover>設計插畫</a>
+        <a href="ad.html" data-hover>廣告設計</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="slide is-on" style="background-image:url('./images/hero-1.jpg')"></div>
+    <div class="slide" style="background-image:url('./images/hero-2.jpg')"></div>
+    <div class="slide" style="background-image:url('./images/hero-3.jpg')"></div>
+  </div>
+  <div class="hero-slider pill-glass" id="heroSlider">
+    <button class="thumb is-on" data-i="0" data-hover><span class="t-img" style="background-image:url('./images/hero-1.jpg')"></span><span class="prog"></span></button>
+    <button class="thumb" data-i="1" data-hover><span class="t-img" style="background-image:url('./images/hero-2.jpg')"></span><span class="prog"></span></button>
+    <button class="thumb" data-i="2" data-hover><span class="t-img" style="background-image:url('./images/hero-3.jpg')"></span><span class="prog"></span></button>
+  </div>
+</section>
+
+<!-- ===== CONTENT (opaque full-width surface, covers fixed hero) ===== -->
+<main class="content">
+
+  <!-- 關於我 + 工作經歷（左右兩欄） -->
+  <section class="about" id="about-me">
+    <div class="about-inner">
+
+      <!-- 左：照片 + 名字 + 工具 -->
+      <aside class="about-me">
+        <div class="about-photo"><img src="./images/me.jpg" alt="鄭芯繻"></div>
+        <span class="eyebrow">About</span>
+        <h2>鄭芯繻<br>Jheng Sin-Ru</h2>
+        <div class="about-skills">
+          <div class="sg">
+            <h4>工具</h4>
+            <div class="tags">
+              <span class="tag pill-glass">Figma</span>
+              <span class="tag pill-glass">Adobe XD</span>
+              <span class="tag pill-glass">Adobe After Effects</span>
+              <span class="tag pill-glass">Adobe Photoshop</span>
+              <span class="tag pill-glass">Adobe Illustrator</span>
+              <span class="tag pill-glass">Live 2D</span>
+            </div>
+          </div>
+          <div class="sg">
+            <h4>UIUX</h4>
+            <div class="tags">
+              <span class="tag pill-glass">Wireframing</span>
+              <span class="tag pill-glass">Design system</span>
+              <span class="tag pill-glass">Visual Composition</span>
+              <span class="tag pill-glass">Mockup</span>
+              <span class="tag pill-glass">Prototyping</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- 右：工作經歷 + 關於 -->
+      <div class="about-exp">
+        <span class="eyebrow">Experience</span>
+        <h3 class="col-title">工作經歷</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-when">2023 — 在職</div>
+            <div class="tl-what">
+              <h3>UIUX設計師</h3>
+              <div class="role">道易科技 · 全職</div>
+              <p>負責產品專案規劃設計、行銷活動設計與社群視覺，建立並維護設計規範。</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-when">2021 — 2023</div>
+            <div class="tl-what">
+              <h3>UI設計師</h3>
+              <div class="role">日日升網路行銷公司 · 全職</div>
+              <p>負責品牌官網、行銷活動頁與社群視覺，建立並維護設計規範。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="intro-block">
+          <h3 class="col-title">關於</h3>
+          <p class="intro">產品 / 視覺設計師，專注於以使用者為中心的介面與品牌設計。喜歡把複雜的問題整理成清楚、好用、有溫度的設計。（這段自我介紹之後換成你自己的文案。）</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 作品分類（hover 切換左側圖片） -->
+  <section class="worksx" id="work">
+    <div class="worksx-inner">
+      <!-- 左：所有卡片疊在一起，hover 分類抽到最前 -->
+      <div class="worksx-stage">
+        <figure class="wx-card" data-key="uiux" style="--x:-10%;--y:2%;--r:-7deg;--w:50%;--ar:4/5;--z:4"><img src="./images/hero-2.jpg" alt="UIUX 產品設計"></figure>
+        <figure class="wx-card" data-key="illustration" style="--x:22%;--y:-2%;--r:5deg;--w:48%;--ar:3/4;--z:3"><img src="./images/hero-3.jpg" alt="設計插畫"></figure>
+        <figure class="wx-card" data-key="ad" style="--x:2%;--y:30%;--r:-3deg;--w:46%;--ar:1/1;--z:2"><img src="./images/hero-1.jpg" alt="廣告設計"></figure>
+        <figure class="wx-card" data-key="vi" style="--x:30%;--y:34%;--r:7deg;--w:42%;--ar:4/5;--z:1"><img src="./images/me.jpg" alt="VI 設計"></figure>
+      </div>
+      <!-- 右：介紹 + 分類列表 -->
+      <div class="worksx-text">
+        <p class="wx-intro">設計師／插畫工作者，作品橫跨：</p>
+        <ul class="wx-cats">
+          <li><a href="uiux.html" data-img="uiux" data-hover>UIUX 產品設計<span class="ar">→</span></a></li>
+          <li><a href="illustration.html" data-img="illustration" data-hover>設計插畫<span class="ar">→</span></a></li>
+          <li><a href="ad.html" data-img="ad" data-hover>廣告設計<span class="ar">→</span></a></li>
+          <li><a href="vi.html" data-img="vi" data-hover>VI 設計<span class="ar">→</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 設計思考 -->
+  <section class="thinking" id="thinking">
+    <div class="section-head" style="padding:0;align-items:flex-start">
+      <span class="eyebrow">Design Thinking</span>
+      <h2 class="section-title" style="text-align:left;margin-top:14px">設計思考</h2>
+    </div>
+    <div class="think-card">
+      <div class="big">內容規劃中</div>
+      <p>這一區之後可放你的設計理念、方法論，或文章 / 案例的延伸連結。先想好想傳達的核心訊息，再決定排版。</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot" id="about">
+    <div class="col">
+      <small>Get in touch</small>
+      <a href="#" data-hover>hello@yourname.com</a>
+      <a href="#" data-hover>EN / 中文</a>
+    </div>
+    <div class="col">
+      <small>Explore</small>
+      <a href="uiux.html" data-hover>UIUX 產品設計</a>
+      <a href="illustration.html" data-hover>設計插畫</a>
+    </div>
+    <div class="col">
+      <small>Follow</small>
+      <a href="#" data-hover>LinkedIn</a>
+      <a href="#" data-hover>Instagram</a>
+      <a href="#" data-hover>Behance</a>
+    </div>
+    <div class="copy">
+      <span>© 2026 Your Name — Portfolio</span>
+      <span>Made with care</span>
+    </div>
+  </footer>
+
+</main>
+
+<!-- LIBS + SHARED JS -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js?v=41"></script>
+</body>
+</html>

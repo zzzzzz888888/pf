@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<title>動態圖像 — Nimbus</title>
+<meta name="description" content="動態圖像 / Motion 作品集。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=41">
+</head>
+<body class="page-theme">
+
+<div class="waiter" id="waiter"><div class="pct" id="pct">00</div></div>
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-menu">
+    <ul class="pill-glass">
+      <li><a href="index.html" data-hover>關於</a></li>
+      <li><a href="uiux.html" data-hover>UIUX 設計</a></li>
+      <li class="has-dropdown"><a data-hover>視覺設計<i class="caret"></i></a></li>
+      <li><a href="motion.html" data-hover>動態圖像</a></li>
+    </ul>
+    <div class="dropdown">
+      <div class="dropdown-pill pill-glass">
+        <a href="vi.html" data-hover>VI 設計</a>
+        <a href="illustration.html" data-hover>設計插畫</a>
+        <a href="ad.html" data-hover>廣告設計</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEAD -->
+<header class="page-head">
+  <span class="eyebrow">Motion</span>
+  <h1>動態圖像</h1>
+  <p>動態設計與動畫作品。每個專案可能包含多支片段，點開後可用下方縮圖切換瀏覽。卡片預設靜止，滑鼠移上去才會播放。</p>
+</header>
+
+<!-- GALLERY — each card = a project; cover is a <video> (poster=靜止, hover=播放) -->
+<section class="gallery ad-gallery" id="motionGallery">
+
+  <div class="shot" data-hover
+       data-title="品牌片頭動畫"
+       data-year="2025" data-client="某品牌"
+       data-desc="品牌識別的動態化片頭，logo 由線條生長成形，搭配音效節奏。包含多種長度版本。"
+       data-images="./images/hero-1.jpg,./images/hero-2.jpg,./images/hero-3.jpg">
+    <video muted loop playsinline preload="metadata" poster="./images/hero-1.jpg"></video>
+  </div>
+
+  <div class="shot" data-hover
+       data-title="社群短影音系列"
+       data-year="2025" data-client="某社群帳號"
+       data-desc="一系列垂直短影音的動態模板，統一視覺語言、可快速套用不同內容。"
+       data-images="./images/hero-2.jpg,./images/hero-3.jpg">
+    <video muted loop playsinline preload="metadata" poster="./images/hero-2.jpg"></video>
+  </div>
+
+  <div class="shot" data-hover
+       data-title="資訊圖動畫"
+       data-year="2024" data-client="某媒體"
+       data-desc="把複雜數據轉成易懂的動態資訊圖，逐段引導觀眾理解。"
+       data-images="./images/hero-3.jpg,./images/hero-1.jpg,./images/hero-2.jpg">
+    <video muted loop playsinline preload="metadata" poster="./images/hero-3.jpg"></video>
+  </div>
+
+  <div class="shot" data-hover
+       data-title="Logo Motion"
+       data-year="2024" data-client="某新創"
+       data-desc="單一 logo 動態（此專案只有一支，所以不會出現縮圖列）。"
+       data-images="./images/me.jpg">
+    <video muted loop playsinline preload="metadata" poster="./images/me.jpg"></video>
+  </div>
+
+  <div class="shot" data-hover
+       data-title="MV 視覺動態"
+       data-year="2023" data-client="某音樂人"
+       data-desc="音樂錄影帶中的動態視覺段落，結合手繪與 3D 元素。"
+       data-images="./images/hero-1.jpg,./images/hero-3.jpg">
+    <video muted loop playsinline preload="metadata" poster="./images/hero-1.jpg"></video>
+  </div>
+
+  <div class="shot" data-hover
+       data-title="展場循環動畫"
+       data-year="2023" data-client="某展覽"
+       data-desc="實體展場大螢幕的循環播放動畫，沉浸式的環境視覺。"
+       data-images="./images/hero-2.jpg,./images/hero-1.jpg,./images/hero-3.jpg">
+    <video muted loop playsinline preload="metadata" poster="./images/hero-2.jpg"></video>
+  </div>
+
+</section>
+
+<!-- LIGHTBOX (multi-image, reuses ad lightbox logic) -->
+<div class="lightbox lightbox-ad" id="lightboxAd">
+  <button class="lb-close" data-hover>✕</button>
+  <button class="lb-nav lb-prev" data-hover>‹</button>
+  <div class="lb-stage">
+    <div class="lb-main">
+      <div class="lb-imgwrap"><img class="lb-img" alt=""></div>
+      <div class="lb-thumbs"></div>
+    </div>
+    <aside class="lb-info">
+      <span class="eyebrow lb-cat"></span>
+      <h3 class="lb-title"></h3>
+      <div class="lb-meta"></div>
+      <p class="lb-desc"></p>
+    </aside>
+  </div>
+  <button class="lb-nav lb-next" data-hover>›</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="col">
+    <small>Get in touch</small>
+    <a href="#" data-hover>hello@nimbus.studio</a>
+  </div>
+  <div class="col">
+    <small>Explore</small>
+    <a href="uiux.html" data-hover>UIUX 產品設計</a>
+    <a href="motion.html" data-hover>動態圖像</a>
+  </div>
+  <div class="col">
+    <small>Follow</small>
+    <a href="#" data-hover>Instagram</a>
+    <a href="#" data-hover>Vimeo</a>
+  </div>
+  <div class="copy">
+    <span>© Nimbus Studio — Demo</span>
+    <span>Motion</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js?v=41"></script>
+</body>
+</html>

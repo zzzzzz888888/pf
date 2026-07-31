@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<title>設計插畫 — Nimbus</title>
+<meta name="description" content="設計插畫作品集。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=41">
+</head>
+<body class="page-theme">
+
+<div class="waiter" id="waiter"><div class="pct" id="pct">00</div></div>
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-menu">
+    <ul class="pill-glass">
+      <li><a href="index.html" data-hover>關於</a></li>
+      <li><a href="uiux.html" data-hover>UIUX 設計</a></li>
+      <li class="has-dropdown"><a data-hover>視覺設計<i class="caret"></i></a></li>
+      <li><a href="motion.html" data-hover>動態圖像</a></li>
+    </ul>
+    <div class="dropdown">
+      <div class="dropdown-pill pill-glass">
+        <a href="vi.html" data-hover>VI 設計</a>
+        <a href="illustration.html" data-hover>設計插畫</a>
+        <a href="ad.html" data-hover>廣告設計</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEAD -->
+<header class="page-head">
+  <span class="eyebrow">Illustration</span>
+  <h1>設計插畫</h1>
+  <p>一張一張的獨立插畫，記錄不同時期的色彩、筆觸與想法。點擊任一張可放大瀏覽。</p>
+</header>
+
+<!-- GALLERY (masonry) -->
+<section class="gallery" id="gallery">
+  <div class="shot" data-hover data-full="./images/hero-3.jpg" data-cat="Illustration" data-title="飛鳥" data-year="2026" data-medium="數位繪製" data-desc="以群飛的鳥群為主題，用大面積色塊與細線捕捉飛行的動態與自由感。整體配色偏明亮，想傳達輕盈與希望。">
+    <img src="./images/hero-3.jpg" alt="飛鳥">
+  </div>
+  <div class="shot" data-hover data-full="./images/hero-1.jpg" data-cat="Illustration" data-title="馬年" data-year="2026" data-medium="數位繪製" data-desc="馬年賀圖，用紅色小馬與淡雅背景營造節慶氣氛，筆觸保留手繪的粗糙質地。">
+    <img src="./images/hero-1.jpg" alt="馬年">
+  </div>
+  <div class="shot" data-hover data-full="./images/hero-2.jpg" data-cat="Illustration" data-title="星空" data-year="2025" data-medium="數位繪製" data-desc="描繪仰望星空的瞬間，藍與米白的對比，搭配滿版星點，傳達安靜與療癒的氛圍。">
+    <img src="./images/hero-2.jpg" alt="星空">
+  </div>
+  <div class="shot" data-hover data-cat="Illustration" data-title="作品 04" data-year="2025" data-medium="—" data-desc="（這張之後換成你的插畫，並補上對應的介紹文字。）"><img src="./images/hero-1.jpg" alt=""></div>
+  <div class="shot" data-hover data-cat="Illustration" data-title="作品 05" data-year="2025" data-medium="—" data-desc="（這張之後換成你的插畫，並補上對應的介紹文字。）"><img src="./images/hero-2.jpg" alt=""></div>
+  <div class="shot" data-hover data-cat="Illustration" data-title="作品 06" data-year="2024" data-medium="—" data-desc="（這張之後換成你的插畫，並補上對應的介紹文字。）"><img src="./images/hero-3.jpg" alt=""></div>
+  <div class="shot" data-hover data-cat="Illustration" data-title="作品 07" data-year="2024" data-medium="—" data-desc="（這張之後換成你的插畫，並補上對應的介紹文字。）"><img src="./images/me.jpg" alt=""></div>
+  <div class="shot" data-hover data-cat="Illustration" data-title="作品 08" data-year="2023" data-medium="—" data-desc="（這張之後換成你的插畫，並補上對應的介紹文字。）"><img src="./images/hero-1.jpg" alt=""></div>
+  <div class="shot" data-hover data-cat="Illustration" data-title="作品 09" data-year="2023" data-medium="—" data-desc="（這張之後換成你的插畫，並補上對應的介紹文字。）"><img src="./images/hero-2.jpg" alt=""></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" data-hover>✕</button>
+  <button class="lb-nav lb-prev" data-hover>‹</button>
+  <div class="lb-stage">
+    <div class="lb-imgwrap"><img class="lb-img" alt=""></div>
+    <aside class="lb-info">
+      <span class="eyebrow lb-cat"></span>
+      <h3 class="lb-title"></h3>
+      <div class="lb-meta"></div>
+      <p class="lb-desc"></p>
+    </aside>
+  </div>
+  <button class="lb-nav lb-next" data-hover>›</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="col">
+    <small>Get in touch</small>
+    <a href="#" data-hover>hello@nimbus.studio</a>
+  </div>
+  <div class="col">
+    <small>Explore</small>
+    <a href="uiux.html" data-hover>UIUX 產品設計</a>
+    <a href="illustration.html" data-hover>設計插畫</a>
+  </div>
+  <div class="col">
+    <small>Follow</small>
+    <a href="#" data-hover>Instagram</a>
+    <a href="#" data-hover>Behance</a>
+  </div>
+  <div class="copy">
+    <span>© Nimbus Studio — Demo</span>
+    <span>Illustration</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js?v=41"></script>
+</body>
+</html>
