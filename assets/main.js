@@ -344,11 +344,14 @@ gsap.utils.toArray(revealSel).forEach(el => {
       if (!lbVid) {
         lbVid = document.createElement('video');
         lbVid.className = 'lb-video';
-        lbVid.setAttribute('controls','');
         lbVid.setAttribute('autoplay','');
         lbVid.setAttribute('loop','');
+        lbVid.setAttribute('muted','');
+        lbVid.muted = true;
         lbVid.setAttribute('playsinline','');
-        lbVid.style.cssText = 'max-width:100%;max-height:82vh;display:block;border-radius:8px';
+        lbVid.setAttribute('disablepictureinpicture','');
+        lbVid.setAttribute('controlslist','nodownload noremoteplayback nofullscreen');
+        lbVid.style.cssText = 'max-width:100%;max-height:82vh;display:block;border-radius:8px;pointer-events:none';
         lbImg.parentNode.appendChild(lbVid);
       }
       lbVid.src = proj.video;
