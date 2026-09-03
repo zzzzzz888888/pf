@@ -447,4 +447,4 @@ a, button, input, textarea, select, label, [role="button"]{cursor:none}
 
 
 /* Slim footer — just a hairline + copyright */
-.foot-mini{position:relative;z-index:2;background:var(--bg);max-width:1280px;margin:0 auto;padding:20px 24px 22px;display:flex;justify-content:space-between;border-top:1px solid var(--hair);font-size:14px;color:var(--dim)}
+.foot-mini{position:relative;z-index:2;background:var(--bg);width:100%;padding:20px max(24px, calc((100% - 1280px)/2 + 24px)) 22px;display:flex;justify-content:space-between;border-top:1px solid var(--hair);font-size:14px;color:var(--dim)}
