@@ -283,7 +283,11 @@ gsap.utils.toArray(revealSel).forEach(el => {
     lb.classList.add('open');
     lenis.stop();
   }
-  function close(){ lb.classList.remove('open'); lenis.start(); }
+  function close(){
+    const lbVid = lb.querySelector('.lb-video');
+    if (lbVid) lbVid.pause();
+    lb.classList.remove('open'); lenis.start();
+  }
   shots.forEach((s, i) => s.addEventListener('click', () => open(i)));
   lb.querySelector('.lb-close').addEventListener('click', close);
   lb.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); open(cur - 1); });
@@ -312,13 +316,17 @@ gsap.utils.toArray(revealSel).forEach(el => {
   const projects = Array.from(shots).map(s => {
     const imgs = (s.dataset.images || '').split(',').map(x => x.trim()).filter(Boolean);
     if (!imgs.length && s.querySelector('img')) imgs.push(s.querySelector('img').src);
+    // 影片來源：優先 data-video，其次 <video><source src>
+    const vidSrcEl = s.querySelector('video source');
+    const video = s.dataset.video || (vidSrcEl ? vidSrcEl.getAttribute('src') : '');
     return {
       cat: s.dataset.cat || 'Advertising',
       title: s.dataset.title || '',
       year: s.dataset.year || '',
       client: s.dataset.client || '',
       desc: s.dataset.desc || '',
-      images: imgs
+      images: imgs,
+      video: video
     };
   });
   let pi = 0, ii = 0;
@@ -331,6 +339,26 @@ gsap.utils.toArray(revealSel).forEach(el => {
   function showProject(){
     const proj = projects[pi];
     ii = 0;
+    // ── 影片模式：以 video 取代 img；隱藏縮圖列 ──
+    let lbVid = lb.querySelector('.lb-video');
+    if (proj.video) {
+      if (!lbVid) {
+        lbVid = document.createElement('video');
+        lbVid.className = 'lb-video';
+        lbVid.setAttribute('controls','');
+        lbVid.setAttribute('autoplay','');
+        lbVid.setAttribute('loop','');
+        lbVid.setAttribute('playsinline','');
+        lbVid.style.cssText = 'max-width:100%;max-height:82vh;display:block;border-radius:8px';
+        lbImg.parentNode.appendChild(lbVid);
+      }
+      lbVid.src = proj.video;
+      lbVid.style.display = 'block';
+      lbImg.style.display = 'none';
+    } else {
+      if (lbVid) { lbVid.pause(); lbVid.removeAttribute('src'); lbVid.load(); lbVid.style.display = 'none'; }
+      lbImg.style.display = 'block';
+    }
     lbCat.textContent = proj.cat;
     lbTitle.textContent = proj.title;
     let rows = '';
@@ -348,12 +376,16 @@ gsap.utils.toArray(revealSel).forEach(el => {
       b.addEventListener('click', () => { ii = k; showImage(); });
       lbThumbs.appendChild(b);
     });
-    lbThumbs.style.display = proj.images.length > 1 ? 'flex' : 'none';
+    lbThumbs.style.display = (proj.video || proj.images.length <= 1) ? 'none' : 'flex';
     showImage();
     bindHover();
   }
   function open(i){ pi = (i + projects.length) % projects.length; showProject(); lb.classList.add('open'); lenis.stop(); }
-  function close(){ lb.classList.remove('open'); lenis.start(); }
+  function close(){
+    const lbVid = lb.querySelector('.lb-video');
+    if (lbVid) lbVid.pause();
+    lb.classList.remove('open'); lenis.start();
+  }
   shots.forEach((s, i) => s.addEventListener('click', () => open(i)));
   lb.querySelector('.lb-close').addEventListener('click', close);
   lb.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); open(pi - 1); });
