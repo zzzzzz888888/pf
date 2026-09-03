@@ -392,3 +392,10 @@ document.querySelectorAll('#cookie a').forEach(a => {
 /* ───── Refresh after fonts + images ───── */
 if (document.fonts) document.fonts.ready.then(() => ScrollTrigger.refresh());
 addEventListener('load', () => ScrollTrigger.refresh());
+
+
+/* ───── Disable right-click / drag save ───── */
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('dragstart', e => {
+  if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') e.preventDefault();
+});
