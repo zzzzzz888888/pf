@@ -367,20 +367,6 @@ gsap.utils.toArray(revealSel).forEach(el => {
   });
 })();
 
-/* ───── Hover-to-play motion thumbnails (static by default) ───── */
-document.querySelectorAll('.shot video').forEach(v => {
-  const card = v.closest('.shot') || v;
-  card.addEventListener('mouseenter', () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); });
-  card.addEventListener('mouseleave', () => { v.pause(); try { v.currentTime = 0; } catch(e){} });
-});
-/* gif alternative: <img data-gif="x.gif" src="still.jpg"> */
-document.querySelectorAll('.shot img[data-gif]').forEach(img => {
-  const card = img.closest('.shot') || img;
-  const still = img.getAttribute('src');
-  card.addEventListener('mouseenter', () => { img.src = img.dataset.gif; });
-  card.addEventListener('mouseleave', () => { img.src = still; });
-});
-
 /* ───── Cookie dismiss ───── */
 document.querySelectorAll('#cookie a').forEach(a => {
   a.addEventListener('click', e => {
