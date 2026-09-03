@@ -444,3 +444,7 @@ a, button, input, textarea, select, label, [role="button"]{cursor:none}
 
 /* image-heavy project pages: align everything to 1200px */
 .proj-wide .crumbs,.proj-wide .proj-title,.proj-wide .proj-metarow{max-width:1200px}
+
+
+/* Slim footer — just a hairline + copyright */
+.foot-mini{max-width:1280px;margin:0 auto;padding:20px 24px 22px;display:flex;justify-content:space-between;border-top:1px solid var(--hair);font-size:14px;color:var(--dim)}
