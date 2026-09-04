@@ -447,19 +447,8 @@ addEventListener('load', () => ScrollTrigger.refresh());
     playBtn.addEventListener('click', (e) => { e.stopPropagation(); v.paused ? v.play() : v.pause(); playBtn.textContent = v.paused ? '▶' : '❚❚'; });
     v.addEventListener('play', () => { playBtn.textContent = '❚❚'; });
     v.addEventListener('pause', () => { playBtn.textContent = '▶'; });
-    const fsBtn = document.createElement('button');
-    fsBtn.className = 'lb-fs';
-    fsBtn.setAttribute('aria-label','全螢幕');
-    fsBtn.textContent = '⛶';
-    fsBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (document.fullscreenElement) document.exitFullscreen();
-      else if (v.requestFullscreen) v.requestFullscreen();
-      else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
-    });
     holder.appendChild(v);
     holder.appendChild(playBtn);
-    holder.appendChild(fsBtn);
     currentVid = v;
 
     lb.classList.add('open');
