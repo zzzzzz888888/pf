@@ -387,7 +387,10 @@ gsap.utils.toArray(revealSel).forEach(el => {
     if (lbVid) lbVid.pause();
     lb.classList.remove('open'); lenis.start();
   }
-  shots.forEach((s, i) => s.addEventListener('click', () => open(i)));
+  shots.forEach((s, i) => s.addEventListener('click', () => {
+    if (s.dataset.href) { location.href = s.dataset.href; return; }
+    open(i);
+  }));
   lb.querySelector('.lb-close').addEventListener('click', close);
   lb.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); open(pi - 1); });
   lb.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); open(pi + 1); });
