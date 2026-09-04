@@ -413,6 +413,70 @@ if (document.fonts) document.fonts.ready.then(() => ScrollTrigger.refresh());
 addEventListener('load', () => ScrollTrigger.refresh());
 
 
+/* ───── UIUX: video lightbox (play/pause + fullscreen only) ───── */
+(function(){
+  const cards = document.querySelectorAll('.proj-card[data-lightbox-video]');
+  const lb = document.getElementById('lightboxUiux');
+  if (!cards.length || !lb) return;
+  const lbCat = lb.querySelector('.lb-cat');
+  const lbTitle = lb.querySelector('.lb-title');
+  const lbDesc = lb.querySelector('.lb-desc');
+  const holder = lb.querySelector('.lb-video-holder');
+  const closeBtn = lb.querySelector('.lb-close');
+  let currentVid = null;
+
+  function open(card){
+    const src = card.dataset.lightboxVideo;
+    lbCat.textContent = card.dataset.lightboxCat || 'UIUX Design';
+    lbTitle.textContent = card.dataset.lightboxTitle || '';
+    lbDesc.textContent = card.dataset.lightboxDesc || '';
+
+    holder.innerHTML = '';
+    const v = document.createElement('video');
+    v.src = src;
+    v.autoplay = true;
+    v.playsInline = true;
+    v.setAttribute('playsinline','');
+    v.setAttribute('disablepictureinpicture','');
+    v.setAttribute('controlslist','nodownload noremoteplayback');
+    v.addEventListener('click', () => { v.paused ? v.play() : v.pause(); playBtn.textContent = v.paused ? '▶' : '❚❚'; });
+    const playBtn = document.createElement('button');
+    playBtn.className = 'lb-play';
+    playBtn.setAttribute('aria-label','播放／暫停');
+    playBtn.textContent = '❚❚';
+    playBtn.addEventListener('click', (e) => { e.stopPropagation(); v.paused ? v.play() : v.pause(); playBtn.textContent = v.paused ? '▶' : '❚❚'; });
+    v.addEventListener('play', () => { playBtn.textContent = '❚❚'; });
+    v.addEventListener('pause', () => { playBtn.textContent = '▶'; });
+    const fsBtn = document.createElement('button');
+    fsBtn.className = 'lb-fs';
+    fsBtn.setAttribute('aria-label','全螢幕');
+    fsBtn.textContent = '⛶';
+    fsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (v.requestFullscreen) v.requestFullscreen();
+      else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+    });
+    holder.appendChild(v);
+    holder.appendChild(playBtn);
+    holder.appendChild(fsBtn);
+    currentVid = v;
+
+    lb.classList.add('open');
+    lenis.stop();
+  }
+  function close(){
+    if (currentVid) { currentVid.pause(); currentVid = null; }
+    holder.innerHTML = '';
+    lb.classList.remove('open');
+    lenis.start();
+  }
+  cards.forEach(c => c.addEventListener('click', (e) => { e.preventDefault(); open(c); }));
+  closeBtn.addEventListener('click', close);
+  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
+})();
+
 /* ───── Disable right-click / drag save ───── */
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('dragstart', e => {
