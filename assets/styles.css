@@ -253,6 +253,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:none}
 .gallery .shot{break-inside:avoid;margin-bottom:24px;border-radius:var(--r-md);overflow:hidden;background:var(--card-2);box-shadow:var(--shadow);cursor:none;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .gallery .shot:hover{transform:translateY(-4px)}
 .gallery .shot img,.gallery .shot video{width:100%;height:auto;display:block}
+#motionGallery{columns:2;column-gap:28px}
+#motionGallery .shot{margin-bottom:28px}
+@media(max-width:700px){#motionGallery{columns:1}}
 .gallery .shot .ph{width:100%;aspect-ratio:var(--ar,4/5);display:block}
 @media(max-width:900px){.gallery{columns:2}}
 @media(max-width:560px){.gallery{columns:1}}
