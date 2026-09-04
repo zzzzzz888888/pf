@@ -276,7 +276,6 @@ gsap.utils.toArray(revealSel).forEach(el => {
     lbCat.textContent = it.cat;
     lbTitle.textContent = it.title;
     let rows = '';
-    if (it.medium) rows += `<div class="row"><b>媒材</b><span>${it.medium}</span></div>`;
     lbMeta.innerHTML = rows;
     lbDesc.textContent = it.desc;
     lb.classList.add('open');
