@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
-<title>廣告設計 — Nimbus</title>
-<meta name="description" content="廣告設計作品集。">
+<title>平面設計 — Nimbus</title>
+<meta name="description" content="平面設計作品集：廣告設計、插圖、文字設計、VI 設計。">
 <meta name="robots" content="noindex, nofollow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=55">
+<link rel="stylesheet" href="assets/styles.css?v=56">
 </head>
 <body class="page-theme">
 
@@ -23,37 +23,33 @@
     <ul class="pill-glass">
       <li><a href="index.html" data-hover>關於</a></li>
       <li><a href="uiux.html" data-hover>UIUX 設計</a></li>
-      <li class="has-dropdown"><a data-hover>視覺設計<i class="caret"></i></a></li>
+      <li><a href="graphic.html" data-hover>平面設計</a></li>
       <li><a href="motion.html" data-hover>動態圖像</a></li>
     </ul>
-    <div class="dropdown">
-      <div class="dropdown-pill pill-glass">
-        <a href="vi.html" data-hover>VI 設計</a>
-        <a href="illustration.html" data-hover>設計插畫</a>
-        <a href="ad.html" data-hover>廣告設計</a>
-      </div>
-    </div>
   </div>
 </nav>
 
 <!-- PAGE HEAD -->
 <header class="page-head">
-  <span class="eyebrow">Advertising</span>
-  <h1>廣告設計</h1>
-  <p>商業廣告與行銷視覺。每個專案可能包含多組畫面，點開後可用下方縮圖切換瀏覽。</p>
+  <span class="eyebrow">Graphic Design</span>
+  <h1>平面設計</h1>
+  <p>包含廣告設計、插圖、文字設計與 VI 設計。點擊卡片可放大瀏覽，彈出視窗左上角會標示所屬分類。</p>
 </header>
 
-<!-- GALLERY (masonry) — each card = a project (may have multiple images) -->
-<section class="gallery ad-gallery" id="adGallery">
+<!-- GALLERY (masonry) — each card = a project; data-cat 決定彈窗左上角小標籤 -->
+<section class="gallery ad-gallery" id="graphicGallery">
 
+  <!-- ═══ Advertising ═══ -->
   <div class="shot" data-hover
+       data-cat="Advertising"
        data-title="洪胖補習班社群圖設計" data-client="洪胖補習班"
        data-desc=""
-       data-images="./images/ad-hongpang.jpg">
+       data-images="./images/ad-hongpang.jpg,./images/ad-hongpang-02.jpg,./images/ad-hongpang-03.jpg">
     <img src="./images/ad-hongpang.jpg" alt="洪胖補習班社群圖設計">
   </div>
 
   <div class="shot" data-hover
+       data-cat="Advertising"
        data-title="秀枝社群圖設計" data-client="SIOU JHIH 秀枝餐飲"
        data-desc=""
        data-images="./images/ad-sioujhih.jpg">
@@ -61,6 +57,7 @@
   </div>
 
   <div class="shot" data-hover
+       data-cat="Advertising"
        data-title="大社犬貓寵物社群圖設計" data-client="大社犬貓寵物美容"
        data-desc=""
        data-images="./images/ad-dashe.jpg">
@@ -68,14 +65,45 @@
   </div>
 
   <div class="shot" data-hover
+       data-cat="Advertising"
        data-title="HINIPES 一頁式產品介紹圖設計" data-client="HINIPES"
        data-desc=""
        data-images="./images/ad-hinipes-01.jpg,./images/ad-hinipes-02.jpg,./images/ad-hinipes-03.jpg,./images/ad-hinipes-04.jpg,./images/ad-hinipes-05.jpg">
     <img src="./images/ad-hinipes-01.jpg" alt="HINIPES 一頁式產品介紹圖設計">
   </div>
+
+  <!-- ═══ Illustration ═══ -->
+  <div class="shot" data-hover
+       data-cat="Illustration"
+       data-title="HINIPES 插畫配圖" data-desc=""
+       data-images="./images/hinipes-illust.jpg">
+    <img src="./images/hinipes-illust.jpg" alt="HINIPES 插畫配圖">
+  </div>
+
+  <div class="shot" data-hover
+       data-cat="Illustration"
+       data-title="插圖" data-desc=""
+       data-images="./images/illust-manga.jpg">
+    <img src="./images/illust-manga.jpg" alt="插圖">
+  </div>
+
+  <div class="shot" data-hover
+       data-cat="Illustration"
+       data-title="社群品牌角色插圖" data-desc=""
+       data-images="./images/illust-brand-character.jpg">
+    <img src="./images/illust-brand-character.jpg" alt="社群品牌角色插圖">
+  </div>
+
+  <div class="shot" data-hover
+       data-cat="Illustration"
+       data-title="插圖" data-desc=""
+       data-images="./images/illust-other.jpg">
+    <img src="./images/illust-other.jpg" alt="插圖">
+  </div>
+
 </section>
 
-<!-- LIGHTBOX (multi-image) -->
+<!-- LIGHTBOX (multi-image / video, reuses ad lightbox logic) -->
 <div class="lightbox lightbox-ad" id="lightboxAd">
   <button class="lb-close" data-hover>✕</button>
   <button class="lb-nav lb-prev" data-hover>‹</button>
@@ -103,6 +131,6 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="assets/main.js?v=55"></script>
+<script src="assets/main.js?v=56"></script>
 </body>
 </html>
