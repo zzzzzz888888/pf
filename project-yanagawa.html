@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<title>柳川台日料理專門形象網站設計 — UIUX 設計 — Nimbus</title>
+<meta name="description" content="柳川台日料理專門形象網站設計案例。">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=104">
+</head>
+<body class="page-theme proj-wide">
+
+<div class="waiter" id="waiter"><div class="pct" id="pct">00</div></div>
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-menu">
+    <ul class="pill-glass">
+      <li><a href="index.html" data-hover>關於</a></li>
+      <li><a href="uiux.html" data-hover>UIUX 設計</a></li>
+      <li><a href="motion.html" data-hover>動態圖像</a></li>
+      <li><a href="graphic.html" data-hover>平面設計</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<nav class="crumbs">
+  <a href="uiux.html" class="back" data-hover>← UIUX 設計</a>
+  <span class="sep">/</span>
+  <span>柳川台日料理專門形象網站設計</span>
+</nav>
+
+<!-- TITLE + META -->
+<div class="proj-title">
+  <span class="eyebrow">UIUX · 形象網站</span>
+  <h1>柳川台日料理專門形象網站設計</h1>
+</div>
+<div class="proj-metarow">
+  <div class="m"><small>角色</small><span>UIUX 設計</span></div>
+  <div class="m"><small>工具</small><span>Figma</span></div>
+</div>
+
+<!-- IMAGES + SIDE-BY-SIDE VIDEOS -->
+<div style="max-width:1200px;margin:48px auto 0;padding:0 24px">
+  <img src="./images/yanagawa-01.jpg" alt="柳川台日料理專門形象網站設計 — 01" style="width:100%;height:auto;display:block">
+</div>
+<div style="max-width:1200px;margin:0 auto;padding:0 24px">
+  <img src="./images/yanagawa-02.jpg" alt="柳川台日料理專門形象網站設計 — 02" style="width:100%;height:auto;display:block">
+</div>
+
+<!-- 影片並排：桌機（寬）+ 手機（窄） -->
+<div style="max-width:1200px;margin:0 auto 100px;padding:0 24px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+  <div style="flex:2 1 480px;min-width:0">
+    <video class="autoplay-video" src="./videos/yanagawa-desktop.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noremoteplayback nofullscreen" style="width:100%;height:auto;display:block;cursor:none"></video>
+  </div>
+  <div style="flex:1 1 220px;min-width:0">
+    <video class="autoplay-video" src="./videos/yanagawa-mobile.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noremoteplayback nofullscreen" style="width:100%;height:auto;display:block;cursor:none"></video>
+  </div>
+</div>
+
+
+<!-- FOOTER (mini) -->
+<footer class="foot-mini">
+  <span>© 2026 JHENG SIN-RU · Portfolio</span>
+</footer>
+
+<script>
+  document.querySelectorAll('.autoplay-video').forEach(v => {
+    v.addEventListener('click', () => { v.paused ? v.play() : v.pause(); });
+    v.addEventListener('contextmenu', e => e.preventDefault());
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js?v=104"></script>
+</body>
+</html>
