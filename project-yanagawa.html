@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=106">
+<link rel="stylesheet" href="assets/styles.css?v=107">
 </head>
 <body class="page-theme proj-wide">
 
@@ -54,12 +54,12 @@
   <img src="./images/yanagawa-02.jpg" alt="柳川台日料理專門形象網站設計 — 02" style="width:100%;height:auto;display:block">
 </div>
 
-<!-- 影片並排：桌機（寬）+ 手機（窄），高度一致 -->
-<div style="max-width:1200px;margin:0 auto 100px;padding:0 24px;display:flex;gap:16px;align-items:stretch;height:min(560px,58vh)">
-  <div style="flex:2 1 0;min-width:0;display:flex;justify-content:center;align-items:center;background:#000;border-radius:8px;overflow:hidden">
+<!-- 影片並排：桌機（寬）+ 手機（窄，等比縮小） -->
+<div style="max-width:1200px;margin:0 auto 100px;padding:0 24px;display:flex;gap:16px;align-items:flex-end;height:min(560px,58vh)">
+  <div style="flex:2 1 0;min-width:0;height:100%;display:flex;justify-content:center;align-items:center;background:#000;border-radius:8px;overflow:hidden">
     <video class="autoplay-video" src="./videos/yanagawa-desktop.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noremoteplayback nofullscreen" style="height:100%;width:100%;object-fit:contain;display:block;cursor:none"></video>
   </div>
-  <div style="flex:1 1 0;min-width:0;display:flex;justify-content:center;align-items:center;background:#000;border-radius:8px;overflow:hidden">
+  <div style="flex:1 1 0;min-width:0;height:75%;display:flex;justify-content:center;align-items:center;background:#000;border-radius:8px;overflow:hidden">
     <video class="autoplay-video" src="./videos/yanagawa-mobile.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noremoteplayback nofullscreen" style="height:100%;width:100%;object-fit:contain;display:block;cursor:none"></video>
   </div>
 </div>
@@ -79,6 +79,6 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="assets/main.js?v=106"></script>
+<script src="assets/main.js?v=107"></script>
 </body>
 </html>
