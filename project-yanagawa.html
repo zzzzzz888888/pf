@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=110">
+<link rel="stylesheet" href="assets/styles.css?v=111">
 </head>
 <body class="page-theme proj-wide">
 
@@ -54,10 +54,10 @@
   <img src="./images/yanagawa-02.jpg?v=2" alt="柳川台日料理專門形象網站設計 — 02" style="width:100%;height:auto;display:block">
 </div>
 
-<!-- 影片並排：桌機（寬）+ 手機（窄，等比縮小），無 letterbox -->
-<div style="max-width:1200px;margin:0 auto 100px;padding:0 24px;display:flex;gap:16px;align-items:flex-end;justify-content:center;flex-wrap:wrap">
-  <video class="autoplay-video" src="./videos/yanagawa-desktop.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noremoteplayback nofullscreen" style="height:min(560px,58vh);width:auto;max-width:100%;border-radius:8px;display:block;cursor:none"></video>
-  <video class="autoplay-video" src="./videos/yanagawa-mobile.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noremoteplayback nofullscreen" style="height:calc(min(560px,58vh) * 0.75);width:auto;max-width:100%;border-radius:8px;display:block;cursor:none"></video>
+<!-- 影片並排：兩個影片同高度，寬度依原始比例 -->
+<div style="max-width:1200px;margin:0 auto 100px;padding:0 24px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap">
+  <video class="autoplay-video" src="./videos/yanagawa-desktop.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noremoteplayback nofullscreen" style="height:min(480px,52vh);width:auto;display:block;cursor:none"></video>
+  <video class="autoplay-video" src="./videos/yanagawa-mobile.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noremoteplayback nofullscreen" style="height:min(480px,52vh);width:auto;display:block;cursor:none"></video>
 </div>
 
 
@@ -75,6 +75,6 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="assets/main.js?v=110"></script>
+<script src="assets/main.js?v=111"></script>
 </body>
 </html>
