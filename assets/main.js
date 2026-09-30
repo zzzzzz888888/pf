@@ -21,7 +21,7 @@ if (cursor) {
   let cx = innerWidth/2, cy = innerHeight/2, tx = cx, ty = cy;
   addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
   (function loop(){
-    cx += (tx - cx)*.22; cy += (ty - cy)*.22;
+    cx += (tx - cx)*.5; cy += (ty - cy)*.5;
     cursor.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%)`;
     requestAnimationFrame(loop);
   })();
