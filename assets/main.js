@@ -231,6 +231,7 @@ gsap.utils.toArray(revealSel).forEach(el => {
     {
       opacity: 1, y: 0, filter: 'blur(0px)',
       duration: 1.1, ease: 'power2.out',
+      clearProps: 'filter',   // 動畫結束後移除 blur(0px)，避免每張卡片一直佔用濾鏡圖層拖慢畫面
       scrollTrigger: { trigger: el, start: 'top 88%' }
     }
   );
@@ -329,9 +330,19 @@ gsap.utils.toArray(revealSel).forEach(el => {
   });
   let pi = 0, ii = 0;
 
+  // 縮圖路徑：./images/x.jpg → ./images/thumb/x.jpg（作品牆已載入，開啟時可立即顯示）
+  const thumbOf = src => src.replace(/(^|\/)images\/(?!thumb\/)/, '$1images/thumb/');
+  let loadToken = 0;
   function showImage(){
     const proj = projects[pi];
-    if (proj.images[ii]) lbImg.src = proj.images[ii];
+    const full = proj.images[ii];
+    if (full) {
+      const token = ++loadToken;
+      lbImg.src = thumbOf(full);            // 先顯示小圖，不用等
+      const pre = new Image();
+      pre.onload = () => { if (token === loadToken) lbImg.src = full; };  // 大圖好了再換上
+      pre.src = full;
+    }
     lbThumbs.querySelectorAll('.lb-thumb').forEach((t, k) => t.classList.toggle('is-on', k === ii));
   }
   function showProject(){
@@ -373,7 +384,7 @@ gsap.utils.toArray(revealSel).forEach(el => {
       const b = document.createElement('button');
       b.className = 'lb-thumb' + (k === 0 ? ' is-on' : '');
       b.setAttribute('data-hover', '');
-      b.innerHTML = `<img src="${src}" alt="">`;
+      b.innerHTML = `<img src="${thumbOf(src)}" alt="">`;
       b.addEventListener('click', () => { ii = k; showImage(); });
       lbThumbs.appendChild(b);
     });
