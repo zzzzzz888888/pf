@@ -469,3 +469,6 @@ a, button, input, textarea, select, label, [role="button"]{cursor:none}
 
 /* Slim footer — just a hairline + copyright */
 .foot-mini{position:relative;z-index:2;background:var(--bg);width:100%;padding:20px max(24px, calc((100% - 1280px)/2 + 24px)) 22px;display:flex;justify-content:space-between;border-top:1px solid var(--hair);font-size:14px;color:var(--dim)}
+.tl-what .tl-list{margin:0;padding-left:1.15em;color:var(--ink-2);font-size:14px;line-height:1.75;max-width:54ch;list-style:disc}
+.tl-what .tl-list li{padding-left:.2em}
+.tl-what .tl-list li::marker{color:var(--dim)}
